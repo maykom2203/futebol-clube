@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import Login from './LoginRoutes';
+// import { Router } from 'express';
+// import Login from './LoginRoutes';
 
-const router = Router();
+// const router = Router();
 
-router.use('/login', Login);
+// router.use('/login', Login);
 
-export default router;
+// export default router;
