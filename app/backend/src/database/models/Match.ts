@@ -12,10 +12,10 @@ class Matches extends Model {
 
 Matches.init({
   id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
     autoIncrement: true,
+    allowNull: false,
     primaryKey: true,
+    type: DataTypes.INTEGER,
   },
   homeTeam: {
     type: DataTypes.INTEGER,
