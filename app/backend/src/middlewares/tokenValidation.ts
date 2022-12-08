@@ -1,13 +1,11 @@
 import 'dotenv/config';
 import * as jwt from 'jsonwebtoken';
 import { NextFunction, Request, Response } from 'express';
-// import HttpException from '../utils/http.exception';
 
 export default function authMiddleware(req: Request, res: Response, next: NextFunction) {
   const { authorization: token } = req.headers;
 
   if (!token) {
-    // throw new HttpException('Token not found', 401);
     return res.status(401).json({ message: 'Token not found' });
   }
 
@@ -17,8 +15,7 @@ export default function authMiddleware(req: Request, res: Response, next: NextFu
     req.body.user = decoded;
 
     next();
-  } catch (err) {
-    // throw new HttpException('Token must be a valid token', 401);
+  } catch (erro) {
     return res.status(401).json({ message: 'Token must be a valid token' });
   }
 }
