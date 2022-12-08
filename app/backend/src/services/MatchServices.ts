@@ -48,4 +48,8 @@ export default class ServiceMatche {
 
     return matchNew.dataValues.id;
   }
+
+  async updateProgressMatch(id: string): Promise<void> {
+    await this.modelMatch.update({ inProgress: false }, { where: { id } });
+  }
 }

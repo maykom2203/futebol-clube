@@ -29,7 +29,18 @@ export default class MatcheController {
       awayTeamGoals,
       inProgress: true,
     };
-
+    if (homeTeam === awayTeam) {
+      return res.status(422).json(
+        { message: 'It is not possible to create a match with two equal teams' },
+      );
+    }
     return res.status(201).json(fields);
+  }
+
+  async updateProgressMatch(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    await this.matchService.updateProgressMatch(id);
+    const theEnd = { message: 'Finished' };
+    return res.status(200).json(theEnd);
   }
 }
