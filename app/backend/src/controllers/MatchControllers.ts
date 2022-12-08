@@ -2,7 +2,9 @@ import { Request, Response } from 'express';
 import ServiceMatche from '../services/MatchServices';
 
 export default class MatcheController {
-  constructor(private matchService = new ServiceMatche()) { }
+  constructor(
+    private matchService = new ServiceMatche(),
+  ) { }
 
   async getMatchesAll(req: Request, res: Response): Promise<Response> {
     const { inProgress } = req.query;
@@ -34,6 +36,7 @@ export default class MatcheController {
         { message: 'It is not possible to create a match with two equal teams' },
       );
     }
+
     return res.status(201).json(fields);
   }
 

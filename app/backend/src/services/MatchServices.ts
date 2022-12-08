@@ -1,10 +1,14 @@
 import { ModelStatic } from 'sequelize';
 import { iMatch } from '../database/interfaces/interMach';
+import { UrlError } from '../middlewares/ErrorUrlMiddleware ';
+
 import Match from '../database/models/Match';
+import ServicesTeams from './TeamsServices';
 
 export default class ServiceMatche {
   constructor(
     private modelMatch: ModelStatic<Match> = Match,
+    private matchServiceTems = new ServicesTeams(),
   ) { }
 
   async getMatchesAll(): Promise<iMatch[]> {
@@ -36,6 +40,10 @@ export default class ServiceMatche {
 
   async NewMatchPost(homeTeam:string, awayTeam:string, homeTeamGoals:string, awayTeamGoals:string)
     : Promise<iMatch> {
+    const home = await this.matchServiceTems.getByIdTeam(+homeTeam);
+    const outside = await this.matchServiceTems.getByIdTeam(+awayTeam);
+    if (!home || !outside) throw new UrlError('There is no team with such id!', 404);
+
     const fields = {
       homeTeam,
       awayTeam,
