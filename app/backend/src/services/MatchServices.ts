@@ -33,4 +33,19 @@ export default class ServiceMatche {
     const Finisheds = await this.modelMatch.findAll({ where: { inProgress: false } });
     return Finisheds;
   }
+
+  async NewMatchPost(homeTeam:string, awayTeam:string, homeTeamGoals:string, awayTeamGoals:string)
+    : Promise<iMatch> {
+    const fields = {
+      homeTeam,
+      awayTeam,
+      homeTeamGoals,
+      awayTeamGoals,
+      inProgress: true,
+    };
+
+    const matchNew = await this.modelMatch.create(fields);
+
+    return matchNew.dataValues.id;
+  }
 }

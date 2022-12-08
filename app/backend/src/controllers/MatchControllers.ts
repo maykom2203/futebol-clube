@@ -15,4 +15,21 @@ export default class MatcheController {
 
     return res.status(200).json(filter);
   }
+
+  async NewMatchPosts(req: Request, res: Response): Promise<Response> {
+    const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = req.body;
+
+    const id = await this.matchService
+      .NewMatchPost(homeTeam, awayTeam, homeTeamGoals, awayTeamGoals);
+    const fields = {
+      id,
+      homeTeam,
+      awayTeam,
+      homeTeamGoals,
+      awayTeamGoals,
+      inProgress: true,
+    };
+
+    return res.status(201).json(fields);
+  }
 }
