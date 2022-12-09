@@ -46,4 +46,12 @@ export default class MatcheController {
     const theEnd = { message: 'Finished' };
     return res.status(200).json(theEnd);
   }
+
+  async updateMatcScoreboard(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    const { homeTeamGoals, awayTeamGoals } = req.body;
+    await this.matchService.updateMatcScoreboard(id, homeTeamGoals, awayTeamGoals);
+    const updated = { message: 'Match updated' };
+    return res.status(200).json(updated);
+  }
 }

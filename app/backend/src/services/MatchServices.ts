@@ -60,4 +60,12 @@ export default class ServiceMatche {
   async updateProgressMatch(id: string): Promise<void> {
     await this.modelMatch.update({ inProgress: false }, { where: { id } });
   }
+
+  async updateMatcScoreboard(
+    id: string,
+    homeTeamGoals: string,
+    awayTeamGoals: string,
+  ): Promise<void> {
+    await this.modelMatch.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
+  }
 }
