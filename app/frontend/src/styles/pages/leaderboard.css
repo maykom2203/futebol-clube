@@ -28,8 +28,8 @@
 
 .classification-handlers form button {
   align-self: flex-end;
-  background: #003be5;
-  border: 1px solid #003be5;
+  background: #ff0303;
+  border: 1px solid #820909;
   border-radius: 8px;
   color: white;
   cursor: pointer;
@@ -44,5 +44,5 @@
 }
 
 .classification-handlers form button:hover {
-  background: #002799;
+  background: #b52b2b;
 }

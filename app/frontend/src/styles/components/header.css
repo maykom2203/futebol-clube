@@ -1,6 +1,6 @@
 .common-header {
   align-items: center;
-  background: #002c33;
+  background: #8d0000;
   bottom: 2.33%;
   display: flex;
   justify-content: space-between;
@@ -36,7 +36,7 @@
 
 .common-header a {
   align-items: center;
-  background: #2fc18c;
+  background: #ff0303;
   border-radius: 8px;
   color: white;
   display: flex;
@@ -53,7 +53,7 @@
 }
 
 .common-header a:hover {
-  background: #32a791;
+  background: #d12929;
   transition: (
     200ms
     cubic-bezier(0.08, 0.52, 0.52, 1)

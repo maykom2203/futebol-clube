@@ -63,7 +63,7 @@
 }
 
 .match-settings-form-buttons button {
-  border: 1px solid #003be5;
+  border: 1px solid #791212;
   border-radius: 8px;
   cursor: pointer;
   font-family: Verdana , Tahoma , sans-serif;
@@ -81,12 +81,12 @@
 
 .match-settings-form-buttons button:nth-child( 1 ) {
   background: white;
-  color: #003be5;
+  color: #ff0303;
   margin-right: 5px;
 }
 
 .match-settings-form-buttons button:nth-child( 2 ) {
-  background: #003be5;
+  background: #ff0303;
   color: white;
   margin-left: 5px;
 }
@@ -96,7 +96,7 @@
 }
 
 .match-settings-form-buttons button:nth-child( 2 ):hover {
-  background: #002799;
+  background: #ff0303;
 }
 
 .match-settings-form-versus {
