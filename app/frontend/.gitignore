@@ -9,8 +9,6 @@ node_modules.tar.gz
 # testing
 /coverage
 
-# production
-/build
 
 # misc
 .DS_Store
